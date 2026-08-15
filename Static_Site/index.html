@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ClosedEYE is a cross-platform network exposure auditing and hardening tool for systems you control.">
+  <meta name="theme-color" content="#080a0d">
+  <meta property="og:title" content="ClosedEYE">
+  <meta property="og:description" content="See what your computer exposes. Audit network exposure, harden what you can, and keep a way back.">
+  <meta property="og:type" content="website">
+  <title>ClosedEYE</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="ClosedEYE home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>ClosedEYE</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#open-source">Open source</a>
+    </nav>
+    <a class="header-github" href="https://github.com/ADevNamedDeLL" target="_blank" rel="noopener">My GitHub</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <div class="hero-content">
+        <div class="eye-wrap" id="eyeWrap">
+          <div class="status status-top">
+            <span class="status-dot"></span>
+            <div><small>SYSTEM STATUS</small><strong>PROTECTED</strong></div>
+          </div>
+
+          <svg class="eye" id="eye" viewBox="0 0 760 440" role="img" aria-label="ClosedEYE monitoring symbol">
+            <defs>
+              <radialGradient id="irisGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="currentColor" stop-opacity=".2"/>
+                <stop offset="58%" stop-color="currentColor" stop-opacity=".08"/>
+                <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="softGlow">
+                <feGaussianBlur stdDeviation="7" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <clipPath id="eyeClip">
+                <path d="M55 220 Q190 62 380 62 Q570 62 705 220 Q570 378 380 378 Q190 378 55 220Z"/>
+              </clipPath>
+            </defs>
+
+            <path class="eye-outline glow-line" d="M55 220 Q190 62 380 62 Q570 62 705 220 Q570 378 380 378 Q190 378 55 220Z"/>
+            <path class="eye-outline inner-outline" d="M92 220 Q215 102 380 102 Q545 102 668 220 Q545 338 380 338 Q215 338 92 220Z"/>
+
+            <g clip-path="url(#eyeClip)">
+              <circle class="iris-aura" cx="380" cy="220" r="175"/>
+              <g class="iris-system">
+                <circle cx="380" cy="220" r="142"/>
+                <circle cx="380" cy="220" r="122"/>
+                <circle cx="380" cy="220" r="98"/>
+                <circle cx="380" cy="220" r="76"/>
+              </g>
+              <g class="iris-segments">
+                <path d="M380 76v48M380 316v48M236 220h48M476 220h48"/>
+                <path d="M278 118l25 43M482 118l-25 43M278 322l25-43M482 322l-25-43"/>
+              </g>
+              <g class="scan-arcs">
+                <path d="M265 148 A145 145 0 0 1 493 148"/>
+                <path d="M235 278 A165 165 0 0 0 525 278"/>
+              </g>
+              <circle class="iris-core" cx="380" cy="220" r="62"/>
+            <g id="pupilGroup">
+                <circle class="pupil" id="pupil" cx="380" cy="220" r="29"/>
+                <circle class="pupil-highlight" cx="370" cy="210" r="7"/>
+            </g>
+            </g>
+
+            <g class="micro-points" aria-hidden="true">
+              <circle cx="142" cy="171" r="2"/><circle cx="174" cy="135" r="2"/>
+              <circle cx="596" cy="135" r="2"/><circle cx="630" cy="171" r="2"/>
+              <circle cx="142" cy="269" r="2"/><circle cx="174" cy="305" r="2"/>
+              <circle cx="596" cy="305" r="2"/><circle cx="630" cy="269" r="2"/>
+            </g>
+          </svg>
+          <div class="status status-bottom"><span>NETWORK EXPOSURE</span><b>MONITORED</b></div>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Network Exposure Protection</p>
+          <h1 id="hero-title">ClosedEYE</h1>
+          <p class="hero-tagline">See what your computer exposes.</p>
+          <p class="hero-description">ClosedEYE is a cross-platform network exposure auditing and hardening tool designed to help you identify unnecessary public and local network exposure, protect your system, and safely revert security changes.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/ADevNamedDeLL/ClosedEYE" target="_blank" rel="noopener">View on GitHub <span>↗</span></a>
+            <a class="button button-secondary" href="#how-it-works">Get Started</a>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><span></span>Scroll to explore</div>
+    </section>
+
+    <section class="section intro" id="about">
+      <div class="section-label">01 / What is ClosedEYE?</div>
+      <div class="split">
+        <h2>Understand the surface<br><em>before you close it.</em></h2>
+        <div class="section-copy">
+          <p>ClosedEYE helps you understand what your computer is exposing to the network. It audits listening services, examines firewall configuration, identifies potentially risky services, and provides a safer way to reduce unnecessary inbound exposure.</p>
+          <p>The goal is not to hide your machine. It is to make its exposure visible, understandable, and easier to control.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-label">02 / Capabilities</div>
+      <div class="section-heading">
+        <h2>Security controls without<br><em>the guesswork.</em></h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-index">01</span><h3>Close Eyes</h3><p>Apply conservative firewall hardening after creating a reversible backup.</p></article>
+        <article class="feature-card"><span class="feature-index">02</span><h3>Revert Changes</h3><p>Restore a previous firewall configuration using a ClosedEYE backup.</p></article>
+        <article class="feature-card"><span class="feature-index">03</span><h3>Test Vulnerabilities</h3><p>Audit listening services, exposed ports, firewall state, and common risky services without exploiting anything.</p></article>
+        <article class="feature-card"><span class="feature-index">04</span><h3>Network Exposure</h3><p>Understand whether services are bound locally, to your LAN, or to all network interfaces.</p></article>
+        <article class="feature-card"><span class="feature-index">05</span><h3>Cross-Platform</h3><p>Designed for Windows and Linux with platform-specific security handling.</p></article>
+        <article class="feature-card"><span class="feature-index">06</span><h3>Safe by Design</h3><p>ClosedEYE asks before making security-sensitive changes and encourages backups before modifications.</p></article>
+      </div>
+    </section>
+
+    <section class="section process-section" id="how-it-works">
+      <div class="section-label">03 / How it works</div>
+      <div class="process-intro">
+        <h2>A simple loop for<br><em>safer systems.</em></h2>
+        <p>ClosedEYE first identifies potential exposure, lets you review what it found, then provides an optional hardening operation with backups.</p>
+      </div>
+      <div class="process">
+        <div class="process-step"><span>01</span><h3>Test</h3><p>Inspect listening services, firewall state, ports, and network bindings.</p></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-step"><span>02</span><h3>Understand</h3><p>Review which services are reachable and why they may matter.</p></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-step"><span>03</span><h3>Protect</h3><p>Apply conservative firewall changes only when you choose to.</p></div>
+        <div class="process-arrow" aria-hidden="true">→</div>
+        <div class="process-step"><span>04</span><h3>Revert if Needed</h3><p>Use the backup to restore your previous firewall configuration.</p></div>
+      </div>
+    </section>
+
+    <section class="terminal-section">
+      <div class="terminal-heading">
+        <div class="section-label">04 / Terminal preview</div>
+        <h2>Built for people who<br><em>want to see the details.</em></h2>
+      </div>
+      <div class="terminal-window" aria-label="ClosedEYE terminal preview">
+        <div class="terminal-bar"><span></span><span></span><span></span><b>closedeye — exposure test</b></div>
+        <pre><span class="muted">ClosedEYE</span>
+<span class="strong">Network Exposure Protection</span>
+
+<span class="accent">1.</span> Close Eyes
+<span class="accent">2.</span> Revert Changes
+<span class="accent">3.</span> Test Vulnerabilities
+<span class="accent">4.</span> Exit
+
+Select an option: <span class="strong">3</span>
+
+<span class="ok">[+]</span> Scanning listening services...
+<span class="ok">[+]</span> Checking firewall...
+<span class="ok">[+]</span> Checking network exposure...
+
+<span class="strong">Vulnerability Report</span>
+
+<span class="high">HIGH</span>      TCP/3389    RDP
+<span class="medium">MEDIUM</span>    TCP/8080    Development Server
+<span class="low">LOW</span>       TCP/443     HTTPS
+
+<span class="muted">2 potentially exposed services detected.</span></pre>
+      </div>
+    </section>
+
+    <section class="section philosophy">
+      <div class="section-label">05 / Security philosophy</div>
+      <div class="philosophy-grid">
+        <div><h2>ClosedEYE does not promise <em>invisibility.</em></h2></div>
+        <div class="section-copy"><p>A local machine cannot determine every aspect of its Internet exposure. Router configuration, NAT, port forwarding, IPv6, VPNs, firewalls, and ISP configuration can all affect accessibility.</p><p>The goal of ClosedEYE is to reduce unnecessary exposure and make potentially risky configurations easier to understand. It focuses on practical visibility and reversible changes rather than making claims it cannot guarantee.</p></div>
+      </div>
+    </section>
+
+    <section class="section open-source" id="open-source">
+      <div class="open-source-card">
+        <div><div class="section-label">06 / Open source</div><h2>Inspect it. Run it.<br><em>Make it yours.</em></h2><p>ClosedEYE is open-source security tooling for systems you control. The project is built with Python and supports Windows and Linux.</p></div>
+        <div class="project-meta"><div><span>License</span><b>GPLv3</b></div><div><span>Language</span><b>Python</b></div><div><span>Platforms</span><b>Windows · Linux</b></div><a class="button button-primary" href="https://github.com/ADevNamedDeLL/ClosedEYE" target="_blank" rel="noopener">View repository <span>↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="cta-eye" aria-hidden="true"></div>
+      <p class="eyebrow">Network Exposure Protection</p>
+      <h2>Know what your machine exposes.</h2>
+      <p>Audit your network exposure. Harden what you can. Keep a way back.</p>
+      <a class="button button-primary" href="https://github.com/ADevNamedDeLL/ClosedEYE" target="_blank" rel="noopener">View ClosedEYE on GitHub <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span><span>ClosedEYE</span></a><p>Network Exposure Protection</p></div>
+    <nav aria-label="Footer navigation"><a href="https://github.com/ADevNamedDeLL" target="_blank" rel="noopener">My GitHub</a><a href="#how-it-works">Documentation</a><a href="#open-source">License</a></nav>
+    <p>Open-source security tooling for systems you control.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
